@@ -2,7 +2,6 @@ import './css/jquery-ui.css';
 import './scss/styles.scss';
 import * as PIXI from 'pixi.js';
 import $ from 'jquery';
-import 'jquery-ui-bundle';
 import * as GSAP from 'gsap';
 import PixiFps from 'pixi-fps';
 const fpsCounter = new PixiFps();

@@ -1,7 +1,6 @@
 const path = require('path');
 const PugPlugin = require('html-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
@@ -16,16 +15,6 @@ module.exports = {
   //watch: true,
   watchOptions: {
     ignored: /node_modules/
-  },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true // set to true if you want JS source maps
-      })
-      // new OptimizeCSSAssetsPlugin({})
-    ]
   },
   module: {
     rules: [
@@ -53,10 +42,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
-        // use: [
-        //   MiniCssExtractPlugin.loader,
-        //   'css-loader?name=./css/[name].[ext]'
-        // ]
       },
       {
         test: /\.scss$/,
@@ -90,11 +75,3 @@ module.exports = {
     new HtmlWebpackPlugin()
   ]
 };
-
-    // ,
-    // new MiniCssExtractPlugin({
-    //   filename: "css/[name].css",
-    //   chunkFilename: "css/[id].css"
-    // })
-  //]
-//};
