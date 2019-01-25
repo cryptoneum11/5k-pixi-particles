@@ -1,5 +1,5 @@
-import '../css/jquery-ui.css';
-import '../scss/styles.scss';
+import './css/jquery-ui.css';
+import './scss/styles.scss';
 import * as PIXI from 'pixi.js';
 import $ from 'jquery';
 import 'jquery-ui-bundle';
@@ -7,10 +7,10 @@ import * as GSAP from 'gsap';
 import PixiFps from 'pixi-fps';
 const fpsCounter = new PixiFps();
 // modules
-import utils from './modules/myutils.js';
-import hittest from './modules/hittest.js';
+import utils from './js/modules/myutils.js';
+import hittest from './js/modules/hittest.js';
 // images
-import '../images/circle.png';
+import './images/circle.png';
 
 
 let type = "WebGL"
@@ -36,7 +36,7 @@ let sprites = [],
 $( 'body' ).append( app.view );
 
 PIXI.loader
-  .add( '../images/circle.png' )
+  .add( './images/circle.png' )
   .load( setup );
 
 function setup(){
@@ -49,7 +49,7 @@ function setup(){
 
 function create_particles( num ){
   for( var i = 0; i < num; i++ ){
-    let sprite = new PIXI.Sprite( PIXI.loader.resources[ '../images/circle.png' ].texture );
+    let sprite = new PIXI.Sprite( PIXI.loader.resources[ './images/circle.png' ].texture );
     sprite.position.set( utils.getRandomInt(0,innerWidth), utils.getRandomInt(0,innerHeight) );
     sprite.width = sprite.height = utils.getRandomInt( 0, 10 );
     app.stage.addChild( sprite );
